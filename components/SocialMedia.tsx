@@ -6,8 +6,12 @@ import {
   YoutubeIcon,
 } from 'lucide-react';
 import React, { FC } from 'react';
-import { Tooltip, TooltipProvider } from './ui/tooltip';
-import { TooltipTrigger } from '@radix-ui/react-tooltip';
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipContent,
+  TooltipTrigger,
+} from './ui/tooltip';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -68,6 +72,14 @@ const SocialMedia: FC<Props> = ({
                 {item.icon}
               </Link>
             </TooltipTrigger>
+            <TooltipContent
+              className={cn(
+                'bg-white text-darkColor font-semibold',
+                tooltipClassName,
+              )}
+            >
+              {item.title}
+            </TooltipContent>
           </Tooltip>
         ))}
       </div>
